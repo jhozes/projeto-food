@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foodBox</title>
+    <link rel="stylesheet" href="style.css">
+    <style>      
+        
+    </style>
+</head>
+<body>
+    
+    <div class="topo" >
+
+        <h1>FoodBox</h1>
+        <h2>Monte seu box e receba em 15 minutos!</h2>
+        </div>
+
+    <h3>Primeiro, seu prato</h3> 
+
+    <div id="frango" class="produto" onclick="escolherFrango()">
+        <img src="../curso youtube/image/frango.jpg" alt="">
+        <h4>Frango Yin-Yang</h4>
+       <p>Um pouco de salada , Um pouco de Batata</p>
+       <p><strong>19,90</strong></p>
+    </div>
+
+    <div id="carne" class="produto" onclick="escolherCarne()">
+        <img src="../curso youtube/image/carne.jpeg" alt="">
+        <h4>Carne e salada</h4>
+       <p>Partida no meio pra aparecer mais carne</p>
+       <p><strong>24,90</strong></p>
+    </div>
+
+    <h3>Agora, sua bebida</h3>
+
+    <div id="coca" class="produto" onclick="escolherCoca()">
+        <img src="../curso youtube/image/cocacola.jpg" alt="">
+        <h4>Normal</h4>
+       <p>Normal , Zero, ou stevia <br>
+        vai na sorte</p>
+       <p><strong>6,90</strong></p>
+    </div>
+
+    <div id="suco" class="produto" onclick="escolhersuco()">
+        <img src="../curso youtube/image/sucos.jpg" alt="2">
+        <h4>Refresco</h4>
+       <p>Podia ser suco, mais leva água</p>
+       <p><strong>4,90</strong></p>
+    </div>
+
+    <h3>Por fim, a sobremesa</h3>
+
+    <div id="pudim" class="produto" onclick="escolherPudim()">
+        <img src="../curso youtube/image/pudim.jpg" alt="">
+        <h4>Pudim </h4>
+       <p>Apenas um lindo e brilhante pudim</p>
+       <p><strong>8,90</strong></p>
+    </div>
+
+    <div id="sorvete" class="produto" onclick="escolherSorvete()">
+        <img src="../curso youtube/image/sorvete.jpg" alt="">
+        <h4>Sorvete Gelado</h4>
+       <p>Três bolinhas como na foto</p>
+       <p><strong>7,90</strong></p>
+    </div>
+
+    <div id="botao" class="botao" onclick="finalizarPedido()">
+        <h2>Finalizar pedido</h2>
+    </div>
+
+    <script>
+        let prato;
+        let bebida;
+        let sobremesa;
+
+
+        function escolherFrango(){
+            document.getElementById("frango").style.borderColor = "green"
+            document.getElementById("carne").style.borderColor = "white"
+            
+            prato = "Frango";
+            
+        }
+
+        function escolherCarne(){
+            document.getElementById("carne").style.borderColor = "green"
+            document.getElementById("frango").style.borderColor = "white"
+            
+            prato = "carne";
+        }
+
+        function escolherCoca(){
+            document.getElementById("coca").style.borderColor = "green"
+            document.getElementById("suco").style.borderColor = "white"
+
+            bebida = "Coca";
+        }
+        
+        function escolhersuco(){
+            document.getElementById("suco").style.borderColor = "green"
+            document.getElementById("coca").style.borderColor = "white"
+            
+            bebida = "Suco";
+        }
+       
+        function escolherPudim(){
+            document.getElementById("pudim").style.borderColor = "green"
+            document.getElementById("sorvete").style.borderColor = "white"
+
+            sobremesa = "Pudim";
+        }
+
+        function escolherSorvete(){
+            document.getElementById("sorvete").style.borderColor = "green"
+            document.getElementById("pudim").style.borderColor = "white"
+            
+            sobremesa = "Sorvete";
+        }
+
+        function finalizarPedido(){
+           let mensagem
+
+           mensagem = "Olá, gostaria de pedir um combo : " + prato + "," + " " + bebida + " " +" e "+ sobremesa;
+
+            alert(mensagem);
+            window.open("https://api.whatsapp.com/send?phone=5515996275915?text"+ mensagem)
+          //  alert(prato);
+          // alert(bebida);
+            //alert(sobremesa);
+        }
+        
+    </script>
+</body>
+</html>
